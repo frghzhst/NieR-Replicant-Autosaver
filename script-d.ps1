@@ -1,5 +1,6 @@
 $script:lfile = "config-d.txt"
-$script:flag1 = (Test-Path $script:lfile) ? $true : $false
+#$script:flag1 = (Test-Path $script:lfile) ? $true : $false
+$script:flag1 = Test-Path $script:lfile
 
 function innit {
     param (

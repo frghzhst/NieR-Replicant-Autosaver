@@ -1,5 +1,6 @@
 ﻿$script:lfile = "config-nd.txt"
-$script:flag1 = (Test-Path $script:lfile) ? $true : $false
+#$script:flag1 = (Test-Path $script:lfile) ? $true : $false
+$script:flag1 = Test-Path $script:lfile
 
 function innit {
     param (
@@ -7,7 +8,7 @@ function innit {
     )
     if (-not $s1) { #file does not exists
         New-Item $lfile -ItemType File | Out-Null
-        echo "target directory(save to)=$PSScriptRoot`n" >> $lfile
+        echo "target directory(save to)=$PSScriptRoot" >> $lfile
         #
     }
     $script:tpath = ""
@@ -23,7 +24,7 @@ function innit {
 Write-Host please ensure that this script is in the [drive]:\user\[username]\Doouments\My Games\Nier replicant\Steam\[some number] directory `(if not, press control c to exit from this program now and put it in the directory`)
 innit $flag1
 
-$date = (Get-Date).ToString("yyyy-MM-dd_hh;mm;ss")
+$date = (Get-Date).ToString("yyyy-MM-dd_HH;mm;ss")
 $filename = "GAMEDATA_$date"
 $savefile = Join-Path $script:tpath -ChildPath $filename
 $source = Join-Path $PSScriptRoot "GAMEDATA"
@@ -31,6 +32,6 @@ try {
     Copy-Item -Path $source -Destination $savefile -ErrorAction Stop
     Write-Host backed up at $date, at $savefile
 } catch {
-    Write-Host Failed to back u
+    Write-Host Failed to back up
     Write-Host "Error: $($_.Exception.Message)"
 }
