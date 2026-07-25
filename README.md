@@ -2,6 +2,7 @@
 <p>A tool for NieR Replicant(steam version) to save and back up the save files and other game data incase of corruption.</p>
 <p>This tool creates a copy of the GAMEDATA file with a date.</p>
 <p>To restore a save, rename the save you want to restore from GAMEDATA_yyyy-MM-dd_HH;mm;ss to GAMEDATA and hit replace.</p>
+<p>Create a shortcut to the script for easy access to run the script</p>
 <p>
 <br>
 <br>
