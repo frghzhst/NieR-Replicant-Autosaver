@@ -22,6 +22,7 @@ function innit {
 }
 
 Write-Host please ensure that this script is in the [drive]:\user\[username]\Doouments\My Games\Nier replicant\Steam\[some number] directory `(if not, press control c to exit from this program now and put it in the directory`)
+pause
 innit $flag1
 
 $date = (Get-Date).ToString("yyyy-MM-dd_HH;mm;ss")
